@@ -1,0 +1,8 @@
+current = initial_solution()
+count = 0
+while temperature > stopping_temp and iter < count
+    candidate = pick random neighbour
+	if accept(candidate_fitness, current_fitness) >= random(0,1)
+		current = candidate
+	count = count + 1
+end

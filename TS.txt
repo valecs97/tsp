@@ -1,0 +1,22 @@
+best_solution_ever = s0
+tabu_list = []
+tabu_list.push(s0)
+count = 0
+while (count < iter)
+    neighborhood = find_neighborhood(dict_of_neighbours)
+    bestSolution = neighborhood[0]
+    for (candidate in neighborhood)
+        if ( (not tabu_list.contains(candidate)) and (fitness(candidate) > fitness(bestSolution)) )
+            bestSolution = candidate
+        end
+    end
+    if (fitness(bestSolution) > fitness(best_solution_ever))
+        best_solution_ever = bestSolution
+    end
+    tabu_list.push(bestSolution)
+    if (tabu_list.size > size)
+        tabu_list.removeFirst()
+    end
+	count = count + 1
+end
+return best_solution_ever

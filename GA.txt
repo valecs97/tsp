@@ -1,0 +1,13 @@
+pop = initialPopulation(popSize, problemSize)
+progress = initial progress
+while (count < iter)
+	routes = rankRoutes(currentGen)
+	results = selection(routes, eliteSize)
+	pool = matingPool(currentGen, results)
+	children = breedPopulation(pool,eliteSize)
+	nextGen = mutatePopulation(children, mutationRate)
+	progress = rankRoute(nextGen)
+	choose best progress and save it
+	count = count + 1
+end
+print best progress
